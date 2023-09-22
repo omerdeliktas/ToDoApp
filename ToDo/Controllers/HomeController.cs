@@ -39,7 +39,6 @@ public class HomeController : Controller
         if (filters.HasStatus)
         {
             query = query.Where(t => t.StatusId == filters.StatusId);
-
         }
 
         if (filters.HasDue)
@@ -47,10 +46,8 @@ public class HomeController : Controller
             var today = DateTime.Today;
             if(filters.IsPast)
             {
-
                 query = query.Where(t => t.DueDate < today);
             }
-
             else if (filters.IsFuture)
             {
                 query = query.Where(t => t.DueDate > today);
@@ -59,16 +56,12 @@ public class HomeController : Controller
             {
                 query =query.Where(t => t.DueDate == today); 
             }
-
-
         }
-        var tasks = query.OrderBy(t => t.DueDate).ToList();
 
         return View(tasks);
     }
 
     [HttpGet]
-
     public IActionResult Add()
     {
         ViewBag.Categories = context.Categories.ToList();
