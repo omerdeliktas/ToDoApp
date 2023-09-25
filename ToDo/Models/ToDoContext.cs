@@ -12,15 +12,16 @@ public class ToDoContext : DbContext
     public DbSet<Status> Statuss { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
+    {   //Kategori tablosuna baslangıç verileri
         modelBuilder.Entity<Category>().HasData(
             new Category { CategoryId = "work", Name = "Calisma" },
             new Category { CategoryId = "home", Name = "Ev İsleri" },
             new Category { CategoryId = "ex", Name = "Egzersiz" },
             new Category { CategoryId = "shop", Name = "Alisveris" },
-            new Category { CategoryId = "call", Name = "iletisim - mail" }
+            new Category { CategoryId = "call", Name = "iletisim" }
 
             );
+        // Durun tablosuna hash ile başlangıç verileri 
         modelBuilder.Entity<Status>().HasData(
             new Status { StatusId = "open", Name = "Devam Eden" },
             new Status { StatusId = "closed", Name = "Yapıldı" }

@@ -25,8 +25,8 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn-primary">Filtrele</button>
-            <a asp-action="Index" asp-route-itemid="" class="btn btn-primary">Temizle</a>
+            <button type="submit" class="btn btn-success">Filtrele</button>
+            <a asp-action="Index" asp-route-itemid="" class="btn btn-success">Temizle</a>
         </form>
     </div>
     <div class="col-md-10">
@@ -42,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ( ToDo task  in Model)
+                    @foreach (ToDo task in Model)
                     {
                         string overdue = task.Overdue ? "bg-warning" : "";
                         <tr>
@@ -53,11 +53,11 @@
                             <td>
                                 @if (task.StatusId == "open")
                                 {
-                                    <button type="submit" class="btn btn-primary btn-sm" 
+                                    <button type="submit" class="btn btn-success btn-sm"
                                             name="@nameof(ToDo.Id)" value="@task.Id">
                                         Tamamlandı
                                     </button>
-                                    
+
 
                                 }
                             </td>
@@ -68,8 +68,8 @@
             </table>
         </form>
         <form asp-action="DeleteComplete" method="post" asp-route-id="@ViewBag.Filters.FilterString">
-            <a asp-action="Add" class="btn btn-primary">Yeni Bir Görev Ekle</a>
-            <button type="submit" class="btn btn-primary">Tamamlanmış Görevi Sil </button>
+            <a asp-action="Add" class="btn btn-success">Yeni Bir Görev Ekle</a>
+            <button type="submit" class="btn btn-success">Görevi Sil </button>
         </form>
     </div>
-</div>
+</div>  
