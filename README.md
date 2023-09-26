@@ -1,7 +1,7 @@
 # ToDoApp
 
 
-Bu ASP.NET Core MVC projesi, bir görev takip uygulamasını temsil eder. 
+Bu ASP.NET Core MVC projesi, bir görev takip uygulamasıdır
 
 Category ve Status Sınıfları: Kategori ve durum verilerini temsil eder.
 
